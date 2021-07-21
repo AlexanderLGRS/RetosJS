@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./descuentos.css">
+    <title>Descuentos</title>
+</head>
+
+<body>
+    <header>
+        <h1>Porcentajes y descuentos</h1>
+    </header>
+    <section class="section1">
+        <form action="" class="form">
+            <label for="value">
+                Ingresa el valor de tu prducto
+            </label>
+            <input type="number" id="value">
+            <label for="discount">
+                Ingresa el descuento de tu producto
+            </label>
+            <input type="number" id="discount">
+            <label for="cupons">
+                Selecciona tu cupón
+            </label>
+            <select name="Cupons" id="cupons" class="cupons">
+                <option value="0">No tengo cupon</option>
+                <option value="10">Cupon 10%</option>
+                <option value="20">Cupon 20%</option>
+                <option value="50">Cupon 50%</option>
+            </select>
+            <button type="button" class="button" onclick="discountCall()">
+            Calcular
+            </button>
+        </form>
+        <textarea name="" id="textArea" class="textArea" cols="30" rows="10"></textarea>
+    </section>
+</body>
+<script src="./descuentos.js"></script>
+
+</html>

@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #0e3e55;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  padding: 20px;
+}
+header {
+    text-shadow: black 20px 20px 10px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  background-color: #389bc9;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  padding: 30px;
+  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 1) 20px 20px 20px;
+  font-size: 15px;
+  width: 50%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+button{
+    width: 25%;
+    height: 30px;
+    margin: 30px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(36, 36, 156);
+    color: white;
+}
+.textArea{
+    font-family: "Century-Gothic";
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+}
