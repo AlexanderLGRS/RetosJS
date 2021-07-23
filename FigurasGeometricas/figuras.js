@@ -1,3 +1,25 @@
+const squareSide = document.getElementById("squareSide")
+
+const triangleSideA = document.getElementById("triangleSideA")
+const triangleSideB = document.getElementById("triangleSideB")
+const triangleBase = document.getElementById("triangleBase")
+const triangleHeight = document.getElementById("triangleHeight")
+
+const triangleIsoscelesSideA = document.getElementById("triangleIsoscelesSideA")
+const triangleIsoscelesSideB = document.getElementById("triangleIsoscelesSideB")
+const triangleIsoscelesBase = document.getElementById("triangleIsoscelesBase")
+
+const circleRadius = document.getElementById("circleRadius")
+
+const textSquare = document.getElementById("textSquare")
+const textTriangle = document.getElementById("textTriangle")
+const textTriangleIsosceles = document.getElementById("textTriangleIsosceles")
+const textCircle = document.getElementById("textCircle")
+
+const selectSquare = document.getElementById("square")
+const selectTriangle = document.getElementById("triangle")
+const selectCircle = document.getElementById("circle")
+
 
 // functions
 
@@ -5,36 +27,31 @@ let pi = Math.PI
 function square(side) {
     let squarePerimeter = side * 4
     let squareArea = side * side
-    console.group("Square")
-    console.log("Los lados del cuadrado miden " + side + " cm");
-    console.log("El perimetro del cuadrado mide " + squarePerimeter + " cm");
-    console.log("El area del cuadrado mide " + squareArea + " cm2");
-    console.groupEnd()
+    textSquare.innerText = "Los lados del cuadrado miden " + side + " cm"
+        + ", el perimetro del cuadrado mide " + squarePerimeter + " cm"
+        + ", el area del cuadrado mide " + squareArea + " cm2"
+
 }
 function triangle(sideA, base, sideC, h) {
     let trianglePerimeter = parseInt(sideA) + parseInt(base) + parseInt(sideC)
     let triangleArea = (base * h) / 2
-    console.group("Triangle")
-    console.log("Los lados del triangulo miden " + sideA + ", " + base + ", " + sideC + " cm");
-    console.log("El perimetro del triangulo mide " + trianglePerimeter + " cm");
-    console.log("El area del triangulo mide " + triangleArea + " cm2");
-    console.groupEnd()
+    textTriangle.innerText = "Los lados del triangulo miden " + sideA + ", " + base + ", " + sideC + " cm"
+        + ", el perimetro del triangulo mide " + trianglePerimeter + " cm"
+        + ", el area del triangulo mide " + triangleArea + " cm2"
 }
 function triangleIsosceles(x, y, b) {
-    console.group("TriangleIsosceles")
     if (x === y) {
         let cateto1 = b / 2
         let hipotenusa = y
         let h = Math.sqrt((hipotenusa * hipotenusa) - (cateto1 * cateto1))
-        console.log("La altura del triangulo es de" + h + " cm");
         let triangleIsoscelesPerimeter = parseInt(x) + parseInt(y) + parseInt(b)
         let triangleIsoscelesArea = ((b / 2) * h) / 2
-        console.log("El perimetro del triangulo mide " + triangleIsoscelesPerimeter + " cm");
-        console.log("El area del triangulo mide " + triangleIsoscelesArea + " cm2");
-        console.groupEnd()
+        textTriangleIsosceles.innerText = "La altura del triangulo es de" + h + " cm"
+            + ", el perimetro del triangulo mide " + triangleIsoscelesPerimeter + " cm"
+            + ", el area del triangulo mide " + triangleIsoscelesArea + " cm2"
     }
     else {
-        console.log("El triangulo no es isosceles");
+        textTriangleIsosceles.innerText = "El triangulo no es isosceles"
     }
 
 }
@@ -42,12 +59,10 @@ function circle(radius) {
     let circleDiameter = radius * 2
     let circlePerimeter = radius * 2 * pi
     let circleArea = radius * radius * pi
-    console.group("Circulo")
-    console.log("El radio del circulo mide " + radius + " cm");
-    console.log("El diametro del circulo mide " + circleDiameter + " cm");
-    console.log("El perimetro del circulo mide " + circlePerimeter + " cm");
-    console.log("El area del circulo mide " + circleArea + " cm2");
-    console.groupEnd()
+    textCircle.innerText = "El radio del circulo mide " + radius + " cm"
+        + ", el diametro del circulo mide " + circleDiameter + " cm"
+        + ", el perimetro del circulo mide " + circlePerimeter + " cm"
+        + ", el area del circulo mide " + circleArea + " cm2"
 }
 function squareCall() {
     square(squareSide.value)
@@ -62,23 +77,30 @@ function circleCall() {
     circle(circleRadius.value)
 }
 
-//
-
-
-const squareSide = document.getElementById("squareSide")
-
-const triangleSideA = document.getElementById("triangleSideA")
-const triangleSideB = document.getElementById("triangleSideB")
-const triangleBase = document.getElementById("triangleBase")
-const triangleHeight = document.getElementById("triangleHeight")
-
-const triangleIsoscelesSideA = document.getElementById("triangleIsoscelesSideA")
-const triangleIsoscelesSideB = document.getElementById("triangleIsoscelesSideB")
-const triangleIsoscelesBase = document.getElementById("triangleIsoscelesBase")
-
-const circleRadius = document.getElementById("circleRadius")
-
-
+document.getElementById("sectionSquare").style.visibility = "hidden";
+document.getElementById("sectionTriangle").style.visibility = "hidden";
+document.getElementById("sectionTriangleIsosceles").style.visibility = "hidden";
+document.getElementById("sectionCircle").style.visibility = "hidden";
+function display() {
+    if (selectSquare.checked) {
+        document.getElementById("sectionSquare").style.visibility = "visible";
+        document.getElementById("sectionTriangle").style.visibility = "hidden";
+        document.getElementById("sectionTriangleIsosceles").style.visibility = "hidden";
+        document.getElementById("sectionCircle").style.visibility = "hidden";
+    }
+    else if (selectTriangle.checked) {
+        document.getElementById("sectionSquare").style.visibility = "hidden";
+        document.getElementById("sectionTriangle").style.visibility = "visible";
+        document.getElementById("sectionTriangleIsosceles").style.visibility = "visible";
+        document.getElementById("sectionCircle").style.visibility = "hidden";
+    }
+    else if (selectCircle.checked) {
+        document.getElementById("sectionSquare").style.visibility = "hidden";
+        document.getElementById("sectionTriangle").style.visibility = "hidden";
+        document.getElementById("sectionTriangleIsosceles").style.visibility = "hidden";
+        document.getElementById("sectionCircle").style.visibility = "visible";
+    }
+}
 
 
 //Triangulo Isosceles
