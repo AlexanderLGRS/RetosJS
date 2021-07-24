@@ -78,27 +78,41 @@ function circleCall() {
 }
 
 document.getElementById("sectionSquare").style.visibility = "hidden";
-document.getElementById("sectionTriangle").style.visibility = "hidden";
-document.getElementById("sectionTriangleIsosceles").style.visibility = "hidden";
+document.getElementById("sectionTriangleE").style.visibility = "hidden";
+document.getElementById("sectionTriangleI").style.visibility = "hidden";
 document.getElementById("sectionCircle").style.visibility = "hidden";
-function display() {
-    if (selectSquare.checked) {
-        document.getElementById("sectionSquare").style.visibility = "visible";
-        document.getElementById("sectionTriangle").style.visibility = "hidden";
-        document.getElementById("sectionTriangleIsosceles").style.visibility = "hidden";
-        document.getElementById("sectionCircle").style.visibility = "hidden";
-    }
-    else if (selectTriangle.checked) {
-        document.getElementById("sectionSquare").style.visibility = "hidden";
-        document.getElementById("sectionTriangle").style.visibility = "visible";
-        document.getElementById("sectionTriangleIsosceles").style.visibility = "visible";
-        document.getElementById("sectionCircle").style.visibility = "hidden";
-    }
-    else if (selectCircle.checked) {
-        document.getElementById("sectionSquare").style.visibility = "hidden";
-        document.getElementById("sectionTriangle").style.visibility = "hidden";
-        document.getElementById("sectionTriangleIsosceles").style.visibility = "hidden";
-        document.getElementById("sectionCircle").style.visibility = "visible";
+
+function display(figura) {
+    switch (figura) {
+        case "cuadrado":
+            document.getElementById("sectionSquare").style.visibility = "visible";
+            document.getElementById("sectionTriangleE").style.visibility = "hidden";
+            document.getElementById("sectionTriangleI").style.visibility = "hidden";
+            document.getElementById("sectionCircle").style.visibility = "hidden";
+            break
+        case "trianguloE":
+            document.getElementById("sectionSquare").style.visibility = "hidden";
+            document.getElementById("sectionTriangleE").style.visibility = "visible";
+            document.getElementById("sectionTriangleI").style.visibility = "hidden";
+            document.getElementById("sectionCircle").style.visibility = "hidden";
+            break
+        case "trianguloI":
+            document.getElementById("sectionSquare").style.visibility = "hidden";
+            document.getElementById("sectionTriangleE").style.visibility = "hidden";
+            document.getElementById("sectionTriangleI").style.visibility = "visible";
+            document.getElementById("sectionCircle").style.visibility = "hidden";
+            break
+        case "circulo":
+            document.getElementById("sectionSquare").style.visibility = "hidden";
+            document.getElementById("sectionTriangleE").style.visibility = "hidden";
+            document.getElementById("sectionTriangleI").style.visibility = "hidden";
+            document.getElementById("sectionCircle").style.visibility = "visible";
+            break
+        default:
+            document.getElementById("sectionSquare").style.visibility = "hidden";
+            document.getElementById("sectionTriangleE").style.visibility = "hidden";
+            document.getElementById("sectionTriangleI").style.visibility = "hidden";
+            document.getElementById("sectionCircle").style.visibility = "hidden";
     }
 }
 

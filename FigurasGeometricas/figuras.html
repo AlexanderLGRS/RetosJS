@@ -10,18 +10,28 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <span class="title">Figuras geometricas, calcúla el área y el perímetro de las figuras más comunes</span>
     </header>
     <form action="" class="figure" id="geometricFigure">
         <span class="subTitle">Elige tu figura</span>
         <div class="figures">
-            <input value="Cuadrado" class="selector" type="radio" name="figure" id="square" onclick="display()">
-            <label for="square">Cuadrado</label><br>
-            <input value="Triangulo" class="selector" type="radio" name="figure" id="triangle" onclick="display()">
-            <label for="triangle">Triangulo</label><br>
-            <input value="Circulo" class="selector" type="radio" name="figure" id="circle" onclick="display()">
-            <label for="circle">Circulo</label><br>
+            <a href="#sectionSquare">
+                <button type="button" class="selector" onclick="display('cuadrado')">
+                    Cuadrado</button>
+            </a>
+            <a href="#sectionTriangleE">
+                <button type="button" class="selector" onclick="display('trianguloE')">
+                    Triangulo escaleno</button>
+            </a>
+            <a href="#sectionTriangleI">
+                <button type="button" class="selector" onclick="display('trianguloI')">
+                    Triangulo isosceles</button>
+            </a>
+            <a href="#sectionCircle">
+                <button type="button" class="selector" onclick="display('circulo')">
+                    Circulo</button>
+            </a>
         </div>
     </form>
     <section class="container">
@@ -31,52 +41,58 @@
                 <label for="squareSide">¿Cuanto mide el lado de tu cuadrado? </label>
                 <input id="squareSide" type="number">
                 <br>
-            <button type="button" class="button" onclick="squareCall()" id="squareCalcule">Calcular</button>
+                <button type="button" class="button" onclick="squareCall()" id="squareCalcule">Calcular</button>
+            </div>
+            <textarea name="" readonly id="textSquare"></textarea>
+        </form>
+        <form action="" class="triangle" id="sectionTriangleE">
+            <div>
+                <h1>Triangulos Escalenos</h1>
+                <label for="triangleSideA">¿Cuanto mide el lado "A" de tu triangulo?</label>
+                <input id="triangleSideA" type="number">
+                <label for="triangleSideB">¿Cuanto mide el lado "B" de tu triangulo? </label>
+                <input id="triangleSideB" type="number">
+                <label for="triangleBase">¿Cuanto mide la base "b" de tu triangulo?</label>
+                <input id="triangleBase" type="number">
+                <label for="triangleHeight">¿Cuanto mide la altura "h" de tu triangulo?</label>
+                <input id="triangleHeight" type="number">
+                <br>
+                <button type="button" class="button" onclick="triangleCall()" id="triangleCalcule">Calcular</button>
+            </div>
+            <textarea name="" readonly id="textTriangle"></textarea>
+        </form>
+        <form action="" class="triangleIsosceles" id="sectionTriangleI">
+            <div>
+                <h1>Triangulos Isosceles</h1>
+                <label for="triangleIsoscelesSideA">¿Cuanto mide el lado "A" de tu triangulo?</label>
+                <input id="triangleIsoscelesSideA" type="number">
+                <label for="triangleIsoscelesSideB">¿Cuanto mide el lado "B" de tu triangulo?</label>
+                <input id="triangleIsoscelesSideB" type="number">
+                <label for="triangleIsoscelesBase">¿Cuanto mide la base "b" de tu triangulo?</label>
+                <input id="triangleIsoscelesBase" type="number">
+                <br>
+                <button type="button" class="button" onclick="triangleIsoscelesCall()"
+                    id="triangleIsoscelesCalcule">Calcular</button>
+            </div>
+            <textarea name="" readonly id="textTriangleIsosceles"></textarea>
+        </form>
+        <form action="" class="circle" id="sectionCircle">
+            <div>
+                <h1>Circulos</h1>
+                <label for="circleRadius">¿Cuanto mide el radio "r" de tu circulo?</label>
+                <input id="circleRadius" type="number">
+                <br>
+                <button type="button" class="button" onclick="circleCall()" id="circleCalcule">Calcular</button>
+            </div>
+            <textarea name="" readonly id="textCircle"></textarea>
+        </form>
+    </section>
+    
+    <a href="#header">
+        <div class="return">
+            <span></span>
         </div>
-        <textarea name="" readonly id="textSquare"></textarea>
-    </form>
-    <form action="" class="triangle" id="sectionTriangle">
-        <div>
-            <h1>Triangulos</h1>
-            <label for="triangleSideA">¿Cuanto mide el lado "A" de tu triangulo?</label>
-            <input id="triangleSideA" type="number">
-            <label for="triangleSideB">¿Cuanto mide el lado "B" de tu triangulo?     </label>
-            <input id="triangleSideB" type="number">
-            <label for="triangleBase">¿Cuanto mide la base "b" de tu triangulo?</label>
-            <input id="triangleBase" type="number">
-            <label for="triangleHeight">¿Cuanto mide la altura "h" de tu triangulo?</label>
-            <input id="triangleHeight" type="number">
-            <br>
-            <button type="button" class="button" onclick="triangleCall()" id="triangleCalcule">Calcular</button>
-        </div>
-        <textarea name="" readonly id="textTriangle"></textarea>
-    </form>
-    <form action="" class="triangleIsosceles" id="sectionTriangleIsosceles">
-        <div>
-            <h1>Triangulos Isosceles</h1>
-            <label for="triangleIsoscelesSideA">¿Cuanto mide el lado "A" de tu triangulo?</label>
-            <input id="triangleIsoscelesSideA" type="number">
-            <label for="triangleIsoscelesSideB">¿Cuanto mide el lado "B" de tu triangulo?</label>
-            <input id="triangleIsoscelesSideB" type="number">
-            <label for="triangleIsoscelesBase">¿Cuanto mide la base "b" de tu triangulo?</label>
-            <input id="triangleIsoscelesBase" type="number">
-            <br>
-            <button type="button" class="button" onclick="triangleIsoscelesCall()"
-            id="triangleIsoscelesCalcule">Calcular</button>
-        </div>
-        <textarea name="" readonly id="textTriangleIsosceles"></textarea>
-    </form>
-    <form action="" class="circle" id="sectionCircle">
-        <div>
-            <h1>Circulos</h1>
-            <label for="circleRadius">¿Cuanto mide el radio "r" de tu circulo?</label>
-            <input id="circleRadius" type="number">
-            <br>
-            <button type="button" class="button" onclick="circleCall()" id="circleCalcule">Calcular</button>
-        </div>
-        <textarea name="" readonly id="textCircle"></textarea>
-    </form>
-</section>
+    </a>
 </body>
 <script src="./figuras.js"></script>
 
