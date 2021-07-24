@@ -1,6 +1,6 @@
 # cursoPracticoJS
 
-https://alexanderlgrs.github.io/RetosJS/
+https://alexanderlgrs.github.io/cursoPracticoJS/
 
 ## Taller #1:Figuras geometricas
 
