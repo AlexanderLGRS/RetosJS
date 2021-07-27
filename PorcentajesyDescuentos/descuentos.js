@@ -9,7 +9,7 @@ function discount(value, discountPercent, cupon) {
     let realValue = (value * (100 - totalDiscount)) / 100
     textArea.innerHTML = "El valor original de tu producto son $" + value
         + "\nTu descuento es de " + discountP + "%"
-        + "\nTu cupon de descuento es de " + cupon + "%"
+        + "\nTu cupón de descuento es de " + cupon + "%"
         + "\nTu descuento total es de " + totalDiscount + "%"
         + "\nEl valor a pagar con descuento son $" + realValue
 }
