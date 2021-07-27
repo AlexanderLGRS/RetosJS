@@ -1,21 +1,20 @@
-
 function discount(value, discountPercent, cupon) {
-    if(discountPercent > 0){
+    if (discountPercent > 0) {
         discountP = discountPercent
     }
-    else{
+    else {
         discountP = 0
     }
     let totalDiscount = parseInt(discountP) + parseInt(cupon)
     let realValue = (value * (100 - totalDiscount)) / 100
-    textArea.innerText = "El valor original de tu producto son "  + value + "$" 
-    + " // Tu descuento es de " + discountP + "%"
-    + " // Tu cupon de descuento es de " + cupon + "%"
-    + " // Tu descuento total es de " + totalDiscount + "%"
-    + " // El valor a pagar con descuento son " + realValue + "$"
+    textArea.innerHTML = "El valor original de tu producto son $" + value
+        + "\nTu descuento es de " + discountP + "%"
+        + "\nTu cupon de descuento es de " + cupon + "%"
+        + "\nTu descuento total es de " + totalDiscount + "%"
+        + "\nEl valor a pagar con descuento son $" + realValue
 }
 
-function discountCall(){
+function discountCall() {
     discount(value.value, discountPercentage.value, cupons.value)
 }
 

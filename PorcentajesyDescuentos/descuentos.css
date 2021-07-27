@@ -7,16 +7,23 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-color: #0e3e55;
-  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23220000' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23440000' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23660000' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23880000' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
   padding: 20px;
 }
+input[type="number"] {
+  text-align: center;
+  -moz-appearance: textfield;
+}
 header {
-    text-shadow: black 20px 20px 10px;
+  color: white;
   font-size: 30px;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  text-align: center;
 }
 .section1 {
   display: flex;
@@ -24,35 +31,99 @@ header {
   align-items: center;
 }
 form {
-  background-color: #389bc9;
-  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
   padding: 30px;
   border: 2px solid black;
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 1) 20px 20px 20px;
   font-size: 15px;
-  width: 50%;
-  height: 300px;
+  width: 80%;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-button{
-    width: 25%;
-    height: 30px;
-    margin: 30px;
-    border: 2px solid black;
-    border-radius: 15px;
-    background-color: rgb(36, 36, 156);
-    color: white;
+label {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px;
 }
-.textArea{
-    font-family: "Century-Gothic";
-    margin: 20px;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    width: 300px;
-    height: 200px;
+input {
+  width: 90%;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 20px;
+  max-width: 200px;
+  font-size: 20px;
+}
+select{
+  width: 90%;
+  max-width: 200px; 
+  height: 30px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+.calculate{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin: 30px 0;
+}
+button{
+  width: 100%;
+  max-width: 200px; 
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.calculate:hover{
+  transform: scale(1.2);
+}
+textarea {
+  margin: 20px 0;
+  color: white;
+  height: 40%;
+  width: 80%;
+  max-width: 700px;
+  align-self: center;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+.return {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+.return span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  transform: rotate(180deg);
+  background-image: url("../icons/down-arrow.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

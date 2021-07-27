@@ -1,39 +1,37 @@
-const list1 = [200, 100, 400, 300, 10, 25, 75, 90]
-const list2 = [200, 100, 400, 300, 10, 25, 75, 90, 12, 44, 35, 4, 70, 12, 32, 50, 12]
-const list3 = [1, 2, 3, 1, 2, 3, 4, 2, 2, 2, 1]
+const userList = document.getElementById("userList")
+const textArea = document.getElementById("textArea")
+
+const numbersArray = []
+let promedioResult = 0
+let modaResult = 0
+let modaCount = 0
+let medianaResult
+
+function addNumbers(list) {
+    const userArray = list.split(",")
+    for (let i = 0; i < userArray.length; i++) {
+        let currentNumber = parseInt(userArray[i])
+        numbersArray.push(currentNumber)
+    }
+    return numbersArray
+}
+
+function addNumbersCall() {
+    addNumbers(userList.value)
+}
+
 function promedio(list) {
-    // let sum = 0
-    // for (let i = 0; i < list.length; i++) {
-    //     sum += list[i]
-    // }
     const sum = list.reduce(
         function (valorAcumulado = 0, nuevoElemento) {
             return valorAcumulado + nuevoElemento
         }
     )
-
-    const result = sum / list.length;
-
-    return result;
-}
-
-function mediana(list) {
-    const newlist = list.sort(function (a, b) { return a - b; });
-    let mediana = 0
-    let index = newlist.length - 1
-    if (newlist.length % 2 == 0) {
-        mediana = (newlist[(index / 2) - 0.5] + newlist[(index / 2) + 0.5]) / 2
-    } else {
-        mediana = newlist[(index / 2)]
-    }
-    console.log(newlist);
-    return mediana
+    promedioResult = sum / list.length;
+    return promedioResult;
 }
 
 function moda(list) {
-
     const elements = {}
-
     list.map(
         function (element) {
             if (elements[element]) {
@@ -43,18 +41,36 @@ function moda(list) {
             }
         }
     )
-    // const newArray = Object.entries(elements).sort(
-    //     function (valorAcumulado, nuevoValor) {
-    //         valorAcumulado - nuevoValor
-    //     }
-    // )
     const finalArray = Object.entries(elements).sort(
         function (elementoA, elementoB) {
             return elementoA[1] - elementoB[1]
         }
     )
-    const result = finalArray[finalArray.length - 1]
-    console.table(list);
-    console.table(finalArray);
-    return result
+    const modaElement = finalArray[finalArray.length - 1]
+    modaResult = modaElement[0]
+    modaCount = modaElement[1]
+    return modaResult, modaCount
+}
+
+function mediana(list) {
+    const newlist = list.sort(function (a, b) { return a - b; });
+    medianaResult = 0
+    let index = newlist.length - 1
+    if (newlist.length % 2 == 0) {
+        medianaResult = (newlist[(index / 2) - 0.5] + newlist[(index / 2) + 0.5]) / 2
+    } else {
+        medianaResult = newlist[(index / 2)]
+    }
+    return medianaResult
+}
+
+function processCall() {
+    promedio(numbersArray)
+    moda(numbersArray)
+    mediana(numbersArray)
+    textArea.innerHTML = "Los numeros agregados son: \n" + userList.value + "// \n"
+        + "Tu lista ordenada se ve asi: \n" + numbersArray + "// \n"
+        + "El promedio es: " + promedioResult + "// \n"
+        + "La moda es: " + modaResult + " ya que se repite " + modaCount + " veces " + "// \n"
+        + "La mediana es: " + medianaResult + "// \n"
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,28 @@
     <link rel="stylesheet" href="./promedioModayMediana.css">
     <title>Promedio, Moda y mediana</title>
 </head>
+
 <body>
-    <Header>
-        <h1>Promedio, moda y mediana</h1>
-    </Header>
+    <header id="header">
+        <span class="title">Promedio, moda y mediana</span>
+    </header>
+    <form action="">
+        <label for="userList" class="">Ingresa tu lista de numeros separados por comas</label>
+        <input type="text" id="userList">
+        <button type="button" class="addNumbers" onclick="addNumbersCall()">Agregar numeros</button>
+        <a href="#textArea" class="process">
+            <button type="button" class="button" onclick="processCall()">
+                Procesar numeros
+            </button>
+        </a>
+        <textarea name="" id="textArea" class="textArea" cols="30" rows="10"></textarea>
+    </form>
+    <a href="#header">
+        <div class="return">
+            <span></span>
+        </div>
+    </a>
 </body>
 <script src="./promedioModayMediana.js"></script>
+
 </html>

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <h1>Porcentajes y descuentos</h1>
     </header>
     <section class="section1">
@@ -32,12 +32,19 @@
                 <option value="20">Cupon 20%</option>
                 <option value="50">Cupon 50%</option>
             </select>
-            <button type="button" class="button" onclick="discountCall()">
-            Calcular
-            </button>
+            <a href="#textArea" class="calculate">
+                <button type="button" class="button" onclick="discountCall()">
+                    Calcular
+                </button>
+            </a>
         </form>
         <textarea name="" id="textArea" class="textArea" cols="30" rows="10"></textarea>
     </section>
+    <a href="#header">
+        <div class="return">
+            <span></span>
+        </div>
+    </a>
 </body>
 <script src="./descuentos.js"></script>
 

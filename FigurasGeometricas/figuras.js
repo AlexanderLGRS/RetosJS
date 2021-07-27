@@ -27,17 +27,17 @@ let pi = Math.PI
 function square(side) {
     let squarePerimeter = side * 4
     let squareArea = side * side
-    textSquare.innerText = "Los lados del cuadrado miden " + side + " cm"
-        + ", el perimetro del cuadrado mide " + squarePerimeter + " cm"
-        + ", el area del cuadrado mide " + squareArea + " cm2"
+    textSquare.innerHTML = "Los lados del cuadrado miden: " + side + " cm"
+        + "\nEl perimetro del cuadrado mide: " + squarePerimeter + " cm"
+        + "\nEl area del cuadrado mide: " + squareArea + " cm2"
 
 }
 function triangle(sideA, base, sideC, h) {
     let trianglePerimeter = parseInt(sideA) + parseInt(base) + parseInt(sideC)
     let triangleArea = (base * h) / 2
-    textTriangle.innerText = "Los lados del triangulo miden " + sideA + ", " + base + ", " + sideC + " cm"
-        + ", el perimetro del triangulo mide " + trianglePerimeter + " cm"
-        + ", el area del triangulo mide " + triangleArea + " cm2"
+    textTriangle.innerHTML = "Los lados del triangulo miden: " + sideA + ", " + base + ", " + sideC + " cm"
+        + "\nEl perimetro del triangulo mide: " + trianglePerimeter + " cm"
+        + "\nEl area del triangulo mide: " + triangleArea + " cm2"
 }
 function triangleIsosceles(x, y, b) {
     if (x === y) {
@@ -46,12 +46,12 @@ function triangleIsosceles(x, y, b) {
         let h = Math.sqrt((hipotenusa * hipotenusa) - (cateto1 * cateto1))
         let triangleIsoscelesPerimeter = parseInt(x) + parseInt(y) + parseInt(b)
         let triangleIsoscelesArea = ((b / 2) * h) / 2
-        textTriangleIsosceles.innerText = "La altura del triangulo es de" + h + " cm"
-            + ", el perimetro del triangulo mide " + triangleIsoscelesPerimeter + " cm"
-            + ", el area del triangulo mide " + triangleIsoscelesArea + " cm2"
+        textTriangleIsosceles.innerHTML = "La altura del triangulo es de: " + h + " cm"
+            + "\nEl perimetro del triangulo mide: " + triangleIsoscelesPerimeter + " cm"
+            + "\nEl area del triangulo mide " + triangleIsoscelesArea + " cm2"
     }
     else {
-        textTriangleIsosceles.innerText = "El triangulo no es isosceles"
+        textTriangleIsosceles.innerHTML = "El triangulo no es isosceles"
     }
 
 }
@@ -59,10 +59,10 @@ function circle(radius) {
     let circleDiameter = radius * 2
     let circlePerimeter = radius * 2 * pi
     let circleArea = radius * radius * pi
-    textCircle.innerText = "El radio del circulo mide " + radius + " cm"
-        + ", el diametro del circulo mide " + circleDiameter + " cm"
-        + ", el perimetro del circulo mide " + circlePerimeter + " cm"
-        + ", el area del circulo mide " + circleArea + " cm2"
+    textCircle.innerHTML = "El radio del circulo mide: " + radius + " cm"
+        + "\nEl diametro del circulo mide: " + circleDiameter + " cm"
+        + "\nEl perimetro del circulo mide: " + circlePerimeter + " cm"
+        + "\nEl area del circulo mide: " + circleArea + " cm2"
 }
 function squareCall() {
     square(squareSide.value)
