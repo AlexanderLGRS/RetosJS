@@ -1,0 +1,187 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Century Gothic;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .subTitle {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .gameboard {
+    height: 100vh;
+    width: 100vh;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 100px;
+    max-height: 60vh;
+    max-width: 60vh;
+  }
+  
+  .color {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+  }
+  
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: left;
+  }
+  
+  .celeste {
+    background: #22a6b3;
+  }
+  
+  .celeste.light {
+    background: #7ed6df;
+  }
+  
+  .violeta {
+    background: #be2edd;
+  }
+  
+  .violeta.light {
+    background: #e056fd;
+  }
+  
+  .naranja {
+    background: #f0932b;
+  }
+  
+  .naranja.light {
+    background: #ffbe76;
+  }
+  
+  .verde {
+    background: #6ab04c;
+  }
+  
+  .verde.light {
+    background: #badc58;
+  }
+  
+  .btn-start {
+    width: 400px;
+    height: 100px;
+    background: #ecf0f1;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 200px);
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
+  $bubble-count: 50;
+  $sway-type: "sway-left-to-right", "sway-right-to-left";
+  
+  @function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+  
+  @function sample($list) {
+    @return nth($list, random(length($list)));
+  }
+  
+  .bubbles {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .bubble {
+    position: absolute;
+    left: var(--bubble-left-offset);
+    bottom: -75%;
+    display: block;
+    width: var(--bubble-radius);
+    height: var(--bubble-radius);
+    border-radius: 50%;
+    animation: float-up var(--bubble-float-duration) var(--bubble-float-delay)
+      ease-in infinite;
+  
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: hsla(183, 94%, 76%, 0.3);
+      border-radius: inherit;
+      animation: var(--bubble-sway-type) var(--bubble-sway-duration)
+        var(--bubble-sway-delay) ease-in-out alternate infinite;
+    }
+  
+    @for $i from 0 through $bubble-count {
+      &:nth-child(#{$i}) {
+        --bubble-left-offset: #{random_range(0vw, 100vw)};
+        --bubble-radius: #{random_range(1vw, 10vw)};
+        --bubble-float-duration: #{random_range(6s, 12s)};
+        --bubble-sway-duration: #{random_range(4s, 6s)};
+        --bubble-float-delay: #{random_range(0s, 4s)};
+        --bubble-sway-delay: #{random_range(0s, 4s)};
+        --bubble-sway-type: #{sample($sway-type)};
+      }
+    }
+  }
+  
+  @keyframes float-up {
+    to {
+      transform: translateY(-175vh);
+    }
+  }
+  
+  @keyframes sway-left-to-right {
+    from {
+      transform: translateX(-100%);
+    }
+  
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  @keyframes sway-right-to-left {
+    from {
+      transform: translateX(100%);
+    }
+  
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
