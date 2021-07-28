@@ -13,17 +13,17 @@ function selectDifficulty(difficulty) {
     switch (difficulty) {
         case "easy":
             console.log("easy");
-            timeBetweenPulses = 2000
+            timeBetweenPulses = 1000
             pulsesForLevel = 1
             break;
         case "medium":
             console.log("medium");
-            timeBetweenPulses = 1000
+            timeBetweenPulses = 500
             pulsesForLevel = 1
             break;
         case "hard":
             console.log("hard");
-            timeBetweenPulses = 250
+            timeBetweenPulses = 200
             pulsesForLevel = 2
             break;
 
