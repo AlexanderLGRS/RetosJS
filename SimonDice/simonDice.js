@@ -4,6 +4,8 @@ const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const difficulty = document.getElementById('difficulty')
 const btnEmpezar = document.getElementById('btnEmpezar')
+const levelVisualizer = document.getElementById('levelVisualizer')
+levelVisualizer.style.visibility = "hidden"
 let streak = 0
 let userScore = 0
 let timeBetweenPulses = 0
@@ -127,6 +129,7 @@ class Juego {
             this.subnivel++
             if (this.subnivel === this.nivel) {
                 this.nivel++
+                levelVisualizer.innerHTML = "Nivel: " + (this.nivel -1)
                 this.eliminarEventosClick
                 userScore = (this.nivel - 1) * 100
                 if (this.nivel === streak + 1) {
@@ -187,4 +190,5 @@ class Juego {
 function empezarJuego() {
     var juego = new Juego()
     difficulty.style.visibility = "hidden";
+    levelVisualizer.style.visibility = "visible"
 }
